@@ -51,7 +51,7 @@ pipeline{
                 
                     stage('docker build'){
                         steps{
-                        sh """docker build -t public.ecr.aws/q5y5m4j7/demo/php/${env_name}:${BUILD_NUMBER} -f Dockerfile . """
+                        sh """docker build -t public.ecr.aws/q5y5m4j7/demo/php/${env_name}:${BUILD_NUMBER} . """
                         }
                     }
 
