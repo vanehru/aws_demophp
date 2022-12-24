@@ -17,9 +17,9 @@ jobs:
         run: echo "BRANCH=$(echo $GITHUB_REF | cut -d'/' -f 3)" >> $GITHUB_ENV
         
       - name: docker build
-        run: docker build . --file Dockerfile1 --tag vanehru/demo_php/$env_name:${GITHUB_RUN_NUMBER}
+        run: docker build . --file Dockerfile1 --tag vanehru/demo_php:${GITHUB_RUN_NUMBER}
         
       - name: docker push
         run: |
           docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
-          docker push vanehru/demo_php/$env_name:${GITHUB_RUN_NUMBER}
+          docker push vanehru/demo_php:${GITHUB_RUN_NUMBER}
