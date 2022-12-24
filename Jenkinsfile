@@ -51,7 +51,7 @@ pipeline{
                 
                     stage('docker build'){
                         steps{
-                        sh """docker build -t public.ecr.aws/q5y5m4j7/demo/php/${env_name}:${BUILD_NUMBER} . """
+                        sh """docker build -t public.ecr.aws/a6r9x9a3/demo/php/${env_name}:${BUILD_NUMBER} . """
                         }
                     }
 
@@ -68,7 +68,7 @@ pipeline{
 
                         steps{
                         sh """
-                        docker rmi public.ecr.aws/q5y5m4j7/demo/php/${env_name}:${currentBuild.previousBuild.number} || true
+                        docker rmi public.ecr.aws/a6r9x9a3/demo/php/${env_name}:${currentBuild.previousBuild.number} || true
            
                         """
                         }
