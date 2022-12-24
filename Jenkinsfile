@@ -59,7 +59,7 @@ pipeline{
                         steps{
                         sh """
                         aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/q5y5m4j7
-                        docker push public.ecr.aws/q5y5m4j7/demo/php/${env_name}:$BUILD_NUMBER 
+                        docker push public.ecr.aws/a6r9x9a3/demo/php/${env_name}:$BUILD_NUMBER 
                         """
                         }
                     }
