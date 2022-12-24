@@ -1,4 +1,4 @@
-FROM public.ecr.aws/a6r9x9a3/base/php:1
+FROM vanehru/demo_php
 RUN mkdir /var/www/test
 RUN chown -R $USER:$USER /var/www/test
 COPY src/test.conf /etc/apache2/sites-available/test.conf
